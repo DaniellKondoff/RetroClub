@@ -137,39 +137,8 @@ export default function Hero() {
           className="animate-rise-5 font-['EB_Garamond'] italic text-white/40 tracking-[0.04em]"
           style={{ fontSize: 'clamp(15px, 1.5vw, 18px)' }}
         >
-          Пазим класическия дух на автомобила
-        </p>
-      </div>
 
-      {/* ── Stats bar ── */}
-      <div
-        className="relative z-[5] border-t border-[rgba(180,134,11,0.18)]"
-        style={{ background: 'rgba(15,12,6,0.6)', backdropFilter: 'blur(8px)' }}
-      >
-        <div
-          className="mx-auto px-6 py-5 flex items-center justify-center gap-0
-            sm:px-10 md:px-16"
-          style={{ maxWidth: '860px' }}
-        >
-          {stats.map((s, i) => (
-            <div key={i} className="flex items-center">
-              {i > 0 && (
-                <div className="w-px mx-8 sm:mx-12" style={{ height: '36px', background: 'rgba(180,134,11,0.25)' }} />
-              )}
-              <div className="flex flex-col items-center gap-[3px]">
-                <span
-                  className="font-['Cinzel'] font-semibold text-gold-light tracking-[0.1em]"
-                  style={{ fontSize: 'clamp(11px, 1.5vw, 14px)' }}
-                >
-                  {s.value}
-                </span>
-                <span className="font-['EB_Garamond'] italic text-white/35 text-[11px] sm:text-[12px] tracking-[0.03em]">
-                  {s.label}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+        </p>
       </div>
 
       {/* ── Bottom accent ── */}
