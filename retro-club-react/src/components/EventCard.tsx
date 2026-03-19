@@ -77,8 +77,8 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
             <p className="font-['EB_Garamond'] leading-relaxed" style={{ fontSize: '16px', color: '#4a3a18' }}>
               {event.description}
             </p>
-            <p className="font-['Cinzel'] uppercase tracking-[0.35em] mt-5" style={{ fontSize: '8px', color: '#b8860b', opacity: 0.75 }}>
-              Главното събитие за 2026 г.
+            <p className="font-['Cinzel'] uppercase tracking-[0.35em] mt-5" style={{ fontSize: '10px', color: '#b8860b', opacity: 0.8 }}>
+              ✦ Главното събитие за 2026 г. ✦
             </p>
           </div>
         </div>
@@ -92,16 +92,16 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
       className="event-row w-full flex items-stretch cursor-pointer rounded-xl overflow-hidden"
       style={{
         '--delay': delay,
-        border: '1px solid rgba(180,134,11,0.28)',
-        boxShadow: '0 2px 12px rgba(42,32,16,0.07), inset 0 1px 0 rgba(255,255,255,0.85)',
+        border: '1px solid rgba(180,134,11,0.40)',
+        boxShadow: '0 3px 20px rgba(42,32,16,0.11), inset 0 1px 0 rgba(255,255,255,0.85)',
       } as React.CSSProperties}
     >
       {/* Date */}
       <div
         className="date-medallion flex-shrink-0 flex flex-col items-center justify-center w-20 sm:w-24 py-5"
-        style={{ background: 'rgba(180,134,11,0.08)' }}
+        style={{ background: 'rgba(180,134,11,0.14)' }}
       >
-        <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '32px', color: '#2a2010' }}>
+        <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '34px', color: '#2a2010' }}>
           {event.day}
         </span>
         <span className="font-['Cinzel'] tracking-[0.25em] uppercase mt-1" style={{ fontSize: '11px', color: '#b8860b' }}>
@@ -115,13 +115,13 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
       {/* Gold accent line */}
       <div
         className="w-[2px] flex-shrink-0 self-stretch"
-        style={{ background: 'linear-gradient(to bottom, transparent, rgba(212,160,23,0.45) 20%, rgba(212,160,23,0.45) 80%, transparent)' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, rgba(212,160,23,0.6) 20%, rgba(212,160,23,0.6) 80%, transparent)' }}
       />
 
       {/* Main content */}
       <div
         className="event-content flex-1 min-w-0 flex flex-col justify-center gap-1.5 px-5 sm:px-6 py-4 sm:py-5"
-        style={{ background: 'rgba(255,255,255,0.28)' }}
+        style={{ background: 'rgba(255,255,255,0.65)' }}
       >
         <div className="flex items-start justify-between gap-3">
           <span
@@ -142,7 +142,7 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
         </p>
         <p
           className="font-['EB_Garamond'] leading-relaxed line-clamp-2"
-          style={{ fontSize: '14px', color: '#5a4e2c', opacity: 0.82 }}
+          style={{ fontSize: '14px', color: '#6a5a38' }}
         >
           {event.description}
         </p>

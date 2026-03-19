@@ -87,6 +87,7 @@ export default function Events() {
                 className="flex-1 h-[1.5px]"
                 style={{ background: 'linear-gradient(to right, rgba(180,134,11,0.45), transparent)' }}
               />
+              <div className="w-1.5 h-1.5 flex-shrink-0 rotate-45" style={{ background: 'rgba(180,134,11,0.5)' }} />
             </div>
 
             {/* Event cards */}
