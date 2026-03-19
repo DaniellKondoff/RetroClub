@@ -1,11 +1,5 @@
 import badgeImg from '../assets/badge.webp';
 
-const stats = [
-  { value: '1990',        label: 'Основан' },
-  { value: '9',           label: 'Събития 2026' },
-  { value: 'Стара Загора', label: 'България' },
-];
-
 export default function Hero() {
   const spokes = Array.from({ length: 16 }, (_, i) => i);
 
