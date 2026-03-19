@@ -27,17 +27,20 @@ export default function Events() {
         style={{ height: '4px', background: 'linear-gradient(90deg, transparent 0%, #9b1c1c 15%, #b8860b 35%, #e8c84a 50%, #b8860b 65%, #9b1c1c 85%, transparent 100%)' }}
       />
 
-      <div className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 py-20 md:py-24">
+      <div
+        className="w-full px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32"
+        style={{ paddingTop: '96px', paddingBottom: '80px' }}
+      >
 
         {/* ── Section header ── */}
         <div className="flex flex-col items-center text-center mb-16">
           {/* Provenance pill */}
           <div
-            className="inline-flex items-center gap-2 mb-7 px-4 py-2 rounded-full"
-            style={{ background: 'rgba(180,134,11,0.09)', border: '1px solid rgba(180,134,11,0.28)' }}
+            className="inline-flex items-center gap-2 mb-7 px-5 py-2.5 rounded-full"
+            style={{ background: 'rgba(180,134,11,0.14)', border: '1px solid rgba(180,134,11,0.45)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#d4a017' }} />
-            <span className="font-['Cinzel'] uppercase tracking-[0.44em]" style={{ fontSize: '9px', color: '#b8860b' }}>
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#d4a017', boxShadow: '0 0 5px rgba(212,160,23,0.7)' }} />
+            <span className="font-['Cinzel'] uppercase tracking-[0.44em]" style={{ fontSize: '11px', color: '#7a5c10' }}>
               Сезон · 2026
             </span>
           </div>
