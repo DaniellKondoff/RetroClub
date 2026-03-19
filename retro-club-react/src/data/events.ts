@@ -1,0 +1,107 @@
+export type TagType = 'et-izl' | 'et-rali' | 'et-sr' | 'et-fest' | 'et-featured';
+
+export interface Event {
+  day: string;
+  month: string;
+  year: string;
+  title: string;
+  meta: string;
+  description: string;
+  tag: string;
+  tagType: TagType;
+  featured?: boolean;
+}
+
+export const events: Event[] = [
+  {
+    day: '14',
+    month: 'Мар',
+    year: '2026',
+    title: 'Трабант Фест — Велико Търново',
+    meta: 'Велико Търново',
+    description: 'Покана за участие в Трабант фест.',
+    tag: 'Покана',
+    tagType: 'et-sr',
+  },
+  {
+    day: '21',
+    month: 'Мар',
+    year: '2026',
+    title: 'Майсторско Управление на Ретро Автомобил',
+    meta: 'Наше събитие',
+    description: 'Клубно събитие за демонстрация на умения за управление на ретро автомобил.',
+    tag: 'Наше',
+    tagType: 'et-izl',
+  },
+  {
+    day: '25',
+    month: 'Апр',
+    year: '2026',
+    title: 'Автопоход до Хижа Чумерна',
+    meta: 'Хижа Чумерна · Неформално',
+    description: 'Неформален автопоход до хижа Чумерна — за всички желаещи членове на клуба.',
+    tag: 'Поход',
+    tagType: 'et-rali',
+  },
+  {
+    day: '23',
+    month: 'Май',
+    year: '2026',
+    title: 'Празник на Село Войсил',
+    meta: 'Село Войсил · Покана от член',
+    description: 'Покана от член на клуба за участие в празника на село Войсил.',
+    tag: 'Покана',
+    tagType: 'et-sr',
+  },
+  {
+    day: '20',
+    month: 'Юни',
+    year: '2026',
+    title: 'Празник на Старозагорски Бани',
+    meta: 'Старозагорски Бани',
+    description: 'Участие в традиционния празник на Старозагорски Бани.',
+    tag: 'Празник',
+    tagType: 'et-fest',
+  },
+  {
+    day: '27',
+    month: 'Юни',
+    year: '2026',
+    title: 'Велико Търново — Търновски Ретро Клуб',
+    meta: 'Велико Търново',
+    description: 'Покана от Търновски Ретро Клуб за съвместна среща и изложба.',
+    tag: 'Покана',
+    tagType: 'et-sr',
+  },
+  {
+    day: '05',
+    month: 'Сеп',
+    year: '2026',
+    title: 'Курбан',
+    meta: 'Клубно събитие',
+    description: 'Традиционен курбан на клуба.',
+    tag: 'Традиция',
+    tagType: 'et-izl',
+  },
+  {
+    day: '03',
+    month: 'Окт',
+    year: '2026',
+    title: 'Ретро Събор',
+    meta: 'Наше събитие · Най-голямото за годината',
+    description: 'Главното събитие на клуба за 2026 година. Ретро събор с участници от цялата страна.',
+    tag: '★ Наше',
+    tagType: 'et-featured',
+    featured: true,
+  },
+  {
+    day: '10',
+    month: 'Окт',
+    year: '2026',
+    title: 'Празник на Нова Загора',
+    meta: 'Нова Загора · Наше събитие',
+    description: 'Участие в празника на Нова Загора — клубно събитие с изложба на ретро автомобили.',
+    tag: 'Наше',
+    tagType: 'et-izl',
+  },
+];

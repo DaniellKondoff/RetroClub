@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR>=180 && NR<=255' \"c:/Users/Kondoff/Desktop/New folder/retro-club-logo-inspired \\(2\\).html\")",
+      "Bash(awk 'NR>=1 && NR<=95' \"c:/Users/Kondoff/Desktop/New folder/retro-club-logo-inspired \\(2\\).html\")",
+      "Bash(awk 'NR>=83 && NR<=140' \"c:/Users/Kondoff/Desktop/New folder/retro-club-logo-inspired \\(2\\).html\")",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
