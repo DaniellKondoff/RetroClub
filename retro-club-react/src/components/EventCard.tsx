@@ -64,7 +64,7 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
               >
                 {event.title}
               </h3>
-              <div className="hidden sm:block">
+              <div className="flex-shrink-0">
                 <EventTag tag={event.tag} tagType={event.tagType} />
               </div>
             </div>
@@ -86,52 +86,63 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
   /* ── Regular event row ── */
   return (
     <div
-      className="event-row w-full flex items-stretch cursor-pointer"
-      style={{ '--delay': delay } as React.CSSProperties}
+      className="event-row w-full flex items-stretch cursor-pointer rounded-xl overflow-hidden"
+      style={{
+        '--delay': delay,
+        border: '1px solid rgba(180,134,11,0.28)',
+        boxShadow: '0 2px 12px rgba(42,32,16,0.07), inset 0 1px 0 rgba(255,255,255,0.85)',
+      } as React.CSSProperties}
     >
       {/* Date */}
       <div
-        className="date-medallion flex-shrink-0 flex flex-col items-center justify-center w-16 sm:w-20 py-5 rounded-l-lg"
-        style={{ background: 'rgba(26,20,8,0.055)' }}
+        className="date-medallion flex-shrink-0 flex flex-col items-center justify-center w-20 sm:w-24 py-5"
+        style={{ background: 'rgba(180,134,11,0.08)' }}
       >
-        <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '20px', color: '#2a2010' }}>
+        <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '32px', color: '#2a2010' }}>
           {event.day}
         </span>
-        <span className="font-['EB_Garamond'] italic tracking-widest uppercase mt-0.5" style={{ fontSize: '9px', color: '#b8860b' }}>
+        <span className="font-['Cinzel'] tracking-[0.25em] uppercase mt-1" style={{ fontSize: '11px', color: '#b8860b' }}>
           {event.month}
+        </span>
+        <span className="font-['Cinzel'] tracking-[0.2em] uppercase mt-0.5" style={{ fontSize: '9px', color: 'rgba(122,106,64,0.65)' }}>
+          {event.year}
         </span>
       </div>
 
       {/* Gold accent line */}
       <div
-        className="w-px flex-shrink-0 self-stretch"
-        style={{ background: 'rgba(180,134,11,0.20)' }}
+        className="w-[2px] flex-shrink-0 self-stretch"
+        style={{ background: 'linear-gradient(to bottom, transparent, rgba(212,160,23,0.45) 20%, rgba(212,160,23,0.45) 80%, transparent)' }}
       />
 
       {/* Main content */}
       <div
-        className="event-content flex-1 min-w-0 flex items-center justify-between gap-6 px-5 sm:px-6 py-5 rounded-r-lg"
+        className="event-content flex-1 min-w-0 flex flex-col justify-center gap-1.5 px-5 sm:px-6 py-4 sm:py-5"
         style={{ background: 'rgba(255,255,255,0.28)' }}
       >
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-            <span
-              className="font-['Cinzel'] font-semibold leading-snug"
-              style={{ fontSize: '14px', color: '#2a2010', letterSpacing: '0.02em' }}
-            >
-              {event.title}
-            </span>
-            <span
-              className="font-['EB_Garamond'] italic flex-shrink-0"
-              style={{ fontSize: '13px', color: '#7a6a40' }}
-            >
-              {event.meta}
-            </span>
+        <div className="flex items-start justify-between gap-3">
+          <span
+            className="font-['Cinzel'] font-semibold leading-snug"
+            style={{ fontSize: '15px', color: '#2a2010', letterSpacing: '0.025em' }}
+          >
+            {event.title}
+          </span>
+          <div className="flex-shrink-0 mt-0.5">
+            <EventTag tag={event.tag} tagType={event.tagType} />
           </div>
         </div>
-        <div className="flex-shrink-0 hidden sm:block">
-          <EventTag tag={event.tag} tagType={event.tagType} />
-        </div>
+        <p
+          className="font-['EB_Garamond'] italic"
+          style={{ fontSize: '14px', color: '#7a6a40' }}
+        >
+          {event.meta}
+        </p>
+        <p
+          className="font-['EB_Garamond'] leading-relaxed line-clamp-2"
+          style={{ fontSize: '14px', color: '#5a4e2c', opacity: 0.82 }}
+        >
+          {event.description}
+        </p>
       </div>
     </div>
   );

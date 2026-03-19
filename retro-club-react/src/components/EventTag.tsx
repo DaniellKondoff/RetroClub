@@ -44,7 +44,7 @@ export default function EventTag({ tag, tagType }: EventTagProps) {
   const featured = tagType === 'et-featured';
   return (
     <span
-      className={`inline-flex items-center font-['Cinzel'] tracking-[0.3em] uppercase px-3 py-[5px] rounded-full border leading-none ${featured ? 'text-[10px] font-bold' : 'text-[9px]'}`}
+      className={`inline-flex items-center font-['Cinzel'] tracking-[0.3em] uppercase px-3 py-[5px] rounded-full border leading-none ${featured ? 'text-[10px] font-bold' : 'text-[10px]'}${tagType === 'et-fest' ? ' event-tag--fest' : ''}`}
       style={{ background: s.bg, borderColor: s.border, color: s.text }}
     >
       {tag}

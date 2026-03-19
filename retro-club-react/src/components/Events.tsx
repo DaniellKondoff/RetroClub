@@ -65,41 +65,31 @@ export default function Events() {
 
         {/* ── Month groups ── */}
         {grouped.map(({ month, items }) => (
-          <div key={month} className="mb-10 last:mb-0">
+          <div key={month} className="mb-12 last:mb-0">
 
             {/* Month label */}
-            <div className="flex items-center gap-5 mb-4">
+            <div className="flex items-center gap-3 mb-5 pt-2">
+              {/* Ornament bars */}
+              <div className="flex items-end gap-0.5 flex-shrink-0">
+                <div className="w-[3px] h-4 rounded-full" style={{ background: 'rgba(180,134,11,0.6)' }} />
+                <div className="w-[1.5px] h-3 rounded-full" style={{ background: 'rgba(180,134,11,0.4)' }} />
+              </div>
               <span
-                className="font-['Cinzel'] uppercase tracking-[0.45em] flex-shrink-0"
-                style={{ fontSize: '10px', color: '#b8860b' }}
+                className="font-['Cinzel'] font-bold uppercase tracking-[0.40em] flex-shrink-0"
+                style={{ fontSize: '13px', color: '#7a5c10' }}
               >
                 {month}
               </span>
               <div
-                className="flex-1 h-px"
-                style={{ background: 'linear-gradient(to right, rgba(180,134,11,0.35), transparent)' }}
+                className="flex-1 h-[1.5px]"
+                style={{ background: 'linear-gradient(to right, rgba(180,134,11,0.45), transparent)' }}
               />
             </div>
 
-            {/* Event rows */}
-            <div
-              className="w-full overflow-hidden rounded-xl"
-              style={{
-                border: '1px solid rgba(180,134,11,0.14)',
-                boxShadow: '0 2px 20px rgba(42,32,16,0.06)',
-              }}
-            >
+            {/* Event cards */}
+            <div className="w-full flex flex-col gap-3">
               {items.map((event, i) => (
-                <div key={`${event.day}-${event.month}`} className="w-full">
-                  <EventCard event={event} index={i} />
-                  {/* Separator between regular rows (not after last, not between featured) */}
-                  {!event.featured && i < items.length - 1 && !items[i + 1]?.featured && (
-                    <div
-                      className="ml-16 sm:ml-20"
-                      style={{ height: '1px', background: 'rgba(180,134,11,0.10)' }}
-                    />
-                  )}
-                </div>
+                <EventCard key={`${event.day}-${event.month}`} event={event} index={i} />
               ))}
             </div>
 
