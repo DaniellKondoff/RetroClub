@@ -102,6 +102,76 @@ body {
   }
 }
 
+/* ── Event card entrance animation ── */
+@keyframes revealCard {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.event-card-enter {
+  opacity: 0;
+  animation: revealCard 0.5s cubic-bezier(.16,1,.3,1) var(--delay, 0s) forwards;
+}
+
+/* ── Events section background ── */
+.events-section-bg {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(180,134,11,0.06) 0%, transparent 60%);
+}
+
+/* ── Event row interactive styles ── */
+.event-row {
+  position: relative;
+  opacity: 0;
+  animation: riseUp 0.6s cubic-bezier(.16,1,.3,1) var(--delay, 0.75s) forwards;
+  transition: padding-left 0.2s ease;
+}
+
+.event-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #b8860b 25%, #e8c84a 50%, #b8860b 75%, transparent);
+  transform: scaleY(0);
+  transition: transform 0.25s cubic-bezier(.16,1,.3,1);
+  transform-origin: center;
+  z-index: 1;
+}
+
+.event-row:not(.event-row--featured):hover::before { transform: scaleY(1); }
+.event-row:not(.event-row--featured):hover         { padding-left: 10px; }
+
+/* Date medallion */
+.date-medallion {
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.date-medallion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b8860b 30%, #e8c84a 50%, #b8860b 70%, transparent);
+}
+
+.event-row:not(.event-row--featured):hover .date-medallion {
+  background: linear-gradient(160deg, #7a5c10, #b8860b) !important;
+}
+
+/* Event content area */
+.event-content { transition: background 0.2s ease; }
+
+.event-row:not(.event-row--featured):hover .event-content {
+  background: #fdf8e8 !important;
+}
+
 /* ── Spoke lines for hero ── */
 .spoke {
   position: absolute;
