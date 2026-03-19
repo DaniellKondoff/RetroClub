@@ -16,9 +16,9 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
         className="event-row event-row--featured relative overflow-hidden rounded-xl"
         style={{
           '--delay': delay,
-          background: 'radial-gradient(ellipse 120% 160% at 50% -10%, #2a1f08 0%, #1a1408 55%, #0f0c06 100%)',
-          border: '1px solid rgba(212,160,23,0.45)',
-          boxShadow: '0 8px 56px rgba(180,134,11,0.22), 0 2px 0 rgba(212,160,23,0.25)',
+          background: 'linear-gradient(160deg, #f8f0cc 0%, #f2e49a 40%, #f8eecc 100%)',
+          border: '1px solid rgba(180,134,11,0.55)',
+          boxShadow: '0 4px 40px rgba(180,134,11,0.25), 0 1px 0 rgba(255,255,255,0.9) inset',
         } as React.CSSProperties}
       >
         {/* Top accent bar */}
@@ -29,7 +29,7 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
         {/* Radial glow */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(180,134,11,0.14) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,23,0.22) 0%, transparent 70%)' }}
         />
 
         <div className="relative z-10 flex items-start gap-6 px-8 pt-8 pb-7 sm:px-10 sm:pt-9 sm:pb-8">
@@ -37,22 +37,25 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
           <div
             className="date-medallion flex-shrink-0 flex flex-col items-center justify-center rounded-lg w-16 h-20 sm:w-18 sm:h-22"
             style={{
-              background: 'rgba(212,160,23,0.11)',
-              border: '1px solid rgba(212,160,23,0.32)',
+              background: 'linear-gradient(160deg, #8a6414 0%, #7a5c10 50%, #5c4208 100%)',
+              border: '1px solid rgba(212,160,23,0.5)',
             }}
           >
-            <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '28px', color: 'white' }}>
+            <span className="font-['Cinzel'] font-bold leading-none" style={{ fontSize: '28px', color: '#f5e8b0' }}>
               {event.day}
             </span>
-            <span className="font-['EB_Garamond'] italic tracking-widest uppercase mt-1" style={{ fontSize: '11px', color: '#b8860b' }}>
+            <span className="font-['Cinzel'] tracking-[0.2em] uppercase mt-1" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.65)' }}>
               {event.month}
+            </span>
+            <span className="font-['Cinzel'] tracking-[0.2em] uppercase mt-0.5" style={{ fontSize: '9px', color: 'rgba(255,255,255,0.4)' }}>
+              {event.year}
             </span>
           </div>
 
           {/* Vertical divider */}
           <div
             className="self-stretch w-px flex-shrink-0"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(212,160,23,0.3) 20%, rgba(212,160,23,0.3) 80%, transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, transparent, rgba(180,134,11,0.5) 20%, rgba(180,134,11,0.5) 80%, transparent)' }}
           />
 
           {/* Content */}
@@ -68,10 +71,10 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
                 <EventTag tag={event.tag} tagType={event.tagType} />
               </div>
             </div>
-            <p className="font-['EB_Garamond'] italic" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>
+            <p className="font-['EB_Garamond'] italic" style={{ fontSize: '14px', color: '#7a5c10', marginBottom: '8px' }}>
               {event.meta}
             </p>
-            <p className="font-['EB_Garamond'] leading-relaxed" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.60)' }}>
+            <p className="font-['EB_Garamond'] leading-relaxed" style={{ fontSize: '16px', color: '#4a3a18' }}>
               {event.description}
             </p>
             <p className="font-['Cinzel'] uppercase tracking-[0.35em] mt-5" style={{ fontSize: '8px', color: '#b8860b', opacity: 0.75 }}>
