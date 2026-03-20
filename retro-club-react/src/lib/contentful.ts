@@ -17,17 +17,22 @@ function parseDate(iso: string): Pick<Event, 'day' | 'month' | 'year'> {
   return { day, month: BULGARIAN_MONTHS[Number(month)], year };
 }
 
-export async function fetchEvents(): Promise<Event[]> {
-  const res = await client.getEntries<{
+interface EventSkeleton {
+  contentTypeId: 'event';
+  fields: {
     date:        string;
     title:       string;
     meta:        string;
     description: string;
     tag:         string;
     featured?:   boolean;
-  }>({
+  };
+}
+
+export async function fetchEvents(): Promise<Event[]> {
+  const res = await client.getEntries<EventSkeleton>({
     content_type: 'event',
-    order:        ['fields.date'],
+    order:        ['fields.date' as any],
   });
 
   return res.items.map((item) => ({
