@@ -15,7 +15,7 @@ export interface Event {
 export const events: Event[] = [
   {
     day: '14',
-    month: 'Мар',
+    month: 'Март',
     year: '2026',
     title: 'Трабант Фест — Велико Търново',
     meta: 'Велико Търново',
@@ -25,7 +25,7 @@ export const events: Event[] = [
   },
   {
     day: '21',
-    month: 'Мар',
+    month: 'Март',
     year: '2026',
     title: 'Майсторско Управление на Ретро Автомобил',
     meta: 'Наше събитие',
@@ -35,7 +35,7 @@ export const events: Event[] = [
   },
   {
     day: '25',
-    month: 'Апр',
+    month: 'Април',
     year: '2026',
     title: 'Автопоход до Хижа Чумерна',
     meta: 'Хижа Чумерна · Неформално',
@@ -75,7 +75,7 @@ export const events: Event[] = [
   },
   {
     day: '05',
-    month: 'Сеп',
+    month: 'Септември',
     year: '2026',
     title: 'Курбан',
     meta: 'Клубно събитие',
