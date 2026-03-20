@@ -1,21 +1,29 @@
-import { events } from '../data/events';
+import { useState, useEffect } from 'react';
+import { fetchEvents } from '../lib/contentful';
+import type { Event } from '../data/events';
 import EventCard from './EventCard';
 
-// Map each event to its global index for consistent even/odd alternation
-const globalIndexMap = new Map(events.map((ev, i) => [ev, i]));
-
-// Group events by month, preserving source order
-const grouped = events.reduce<{ month: string; items: typeof events }[]>((acc, ev) => {
-  const last = acc[acc.length - 1];
-  if (last && last.month === ev.month) {
-    last.items.push(ev);
-  } else {
-    acc.push({ month: ev.month, items: [ev] });
-  }
-  return acc;
-}, []);
-
 export default function Events() {
+  const [events, setEvents]   = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError]     = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchEvents()
+      .then(setEvents)
+      .catch(() => setError('Неуспешно зареждане на събитията.'))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const globalIndexMap = new Map(events.map((ev, i) => [ev, i]));
+
+  const grouped = events.reduce<{ month: string; items: Event[] }[]>((acc, ev) => {
+    const last = acc[acc.length - 1];
+    if (last && last.month === ev.month) last.items.push(ev);
+    else acc.push({ month: ev.month, items: [ev] });
+    return acc;
+  }, []);
+
   return (
     <section
       className="w-full relative"
@@ -69,8 +77,28 @@ export default function Events() {
           </p>
         </div>
 
+        {/* ── Loading state ── */}
+        {loading && (
+          <p
+            className="text-center font-['Cinzel'] uppercase tracking-[0.3em]"
+            style={{ fontSize: '13px', color: '#b8860b', opacity: 0.7 }}
+          >
+            Зареждане…
+          </p>
+        )}
+
+        {/* ── Error state ── */}
+        {error && (
+          <p
+            className="text-center font-['EB_Garamond'] italic"
+            style={{ fontSize: '16px', color: '#9b1c1c' }}
+          >
+            {error}
+          </p>
+        )}
+
         {/* ── Month groups ── */}
-        {grouped.map(({ month, items }) => (
+        {!loading && !error && grouped.map(({ month, items }) => (
           <div key={month} className="mb-12 last:mb-0">
 
             {/* Month label */}
