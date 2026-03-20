@@ -1,6 +1,9 @@
 import { events } from '../data/events';
 import EventCard from './EventCard';
 
+// Map each event to its global index for consistent even/odd alternation
+const globalIndexMap = new Map(events.map((ev, i) => [ev, i]));
+
 // Group events by month, preserving source order
 const grouped = events.reduce<{ month: string; items: typeof events }[]>((acc, ev) => {
   const last = acc[acc.length - 1];
@@ -92,8 +95,8 @@ export default function Events() {
 
             {/* Event cards */}
             <div className="w-full flex flex-col gap-3">
-              {items.map((event, i) => (
-                <EventCard key={`${event.day}-${event.month}`} event={event} index={i} />
+              {items.map((event) => (
+                <EventCard key={`${event.day}-${event.month}`} event={event} index={globalIndexMap.get(event)!} />
               ))}
             </div>
 

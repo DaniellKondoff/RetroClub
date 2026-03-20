@@ -183,15 +183,6 @@ body {
   overflow: hidden;
 }
 
-/* ── Festival tag pulse ── */
-@keyframes tagPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(192,40,42,0.0); }
-  50%       { box-shadow: 0 0 0 5px rgba(192,40,42,0.20); }
-}
-
-.event-tag--fest {
-  animation: tagPulse 3s ease-in-out 2s infinite;
-}
 
 /* ── Spoke lines for hero ── */
 .spoke {

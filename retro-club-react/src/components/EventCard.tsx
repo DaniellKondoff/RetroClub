@@ -68,7 +68,7 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
                 {event.title}
               </h3>
               <div className="flex-shrink-0">
-                <EventTag tag={event.tag} tagType={event.tagType} />
+                <EventTag tag={event.tag} index={index} featured={event.featured} />
               </div>
             </div>
             <p className="font-['EB_Garamond'] italic" style={{ fontSize: '14px', color: '#7a5c10', marginBottom: '8px' }}>
@@ -131,7 +131,7 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
             {event.title}
           </span>
           <div className="flex-shrink-0 mt-0.5">
-            <EventTag tag={event.tag} tagType={event.tagType} />
+            <EventTag tag={event.tag} index={index} featured={event.featured} />
           </div>
         </div>
         <p

@@ -1,5 +1,3 @@
-export type TagType = 'et-izl' | 'et-rali' | 'et-sr' | 'et-fest' | 'et-featured';
-
 export interface Event {
   day: string;
   month: string;
@@ -8,7 +6,6 @@ export interface Event {
   meta: string;
   description: string;
   tag: string;
-  tagType: TagType;
   featured?: boolean;
 }
 
@@ -21,7 +18,6 @@ export const events: Event[] = [
     meta: 'Велико Търново',
     description: 'Покана за участие в Трабант фест.',
     tag: 'Покана',
-    tagType: 'et-sr',
   },
   {
     day: '21',
@@ -31,7 +27,6 @@ export const events: Event[] = [
     meta: 'Наше събитие',
     description: 'Клубно събитие за демонстрация на умения за управление на ретро автомобил.',
     tag: 'Наше',
-    tagType: 'et-izl',
   },
   {
     day: '25',
@@ -41,7 +36,6 @@ export const events: Event[] = [
     meta: 'Хижа Чумерна · Неформално',
     description: 'Неформален автопоход до хижа Чумерна — за всички желаещи членове на клуба.',
     tag: 'Поход',
-    tagType: 'et-rali',
   },
   {
     day: '23',
@@ -51,7 +45,6 @@ export const events: Event[] = [
     meta: 'Село Войсил · Покана от член',
     description: 'Покана от член на клуба за участие в празника на село Войсил.',
     tag: 'Покана',
-    tagType: 'et-sr',
   },
   {
     day: '20',
@@ -61,7 +54,6 @@ export const events: Event[] = [
     meta: 'Старозагорски Бани',
     description: 'Участие в традиционния празник на Старозагорски Бани.',
     tag: 'Празник',
-    tagType: 'et-fest',
   },
   {
     day: '27',
@@ -71,7 +63,6 @@ export const events: Event[] = [
     meta: 'Велико Търново',
     description: 'Покана от Търновски Ретро Клуб за съвместна среща и изложба.',
     tag: 'Покана',
-    tagType: 'et-sr',
   },
   {
     day: '05',
@@ -81,7 +72,6 @@ export const events: Event[] = [
     meta: 'Клубно събитие',
     description: 'Традиционен курбан на клуба.',
     tag: 'Традиция',
-    tagType: 'et-izl',
   },
   {
     day: '03',
@@ -91,7 +81,6 @@ export const events: Event[] = [
     meta: 'Наше събитие · Най-голямото за годината',
     description: 'Главното събитие на клуба за 2026 година. Ретро събор с участници от цялата страна.',
     tag: '★ Наше',
-    tagType: 'et-featured',
     featured: true,
   },
   {
@@ -102,6 +91,5 @@ export const events: Event[] = [
     meta: 'Нова Загора · Наше събитие',
     description: 'Участие в празника на Нова Загора — клубно събитие с изложба на ретро автомобили.',
     tag: 'Наше',
-    tagType: 'et-izl',
   },
 ];
