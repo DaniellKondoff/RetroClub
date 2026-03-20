@@ -77,9 +77,6 @@ export default function EventCard({ event, index = 0 }: EventCardProps) {
             <p className="font-['EB_Garamond'] leading-relaxed" style={{ fontSize: '16px', color: '#4a3a18' }}>
               {event.description}
             </p>
-            <p className="font-['Cinzel'] uppercase tracking-[0.35em] mt-5" style={{ fontSize: '10px', color: '#b8860b', opacity: 0.8 }}>
-              ✦ Главното събитие за 2026 г. ✦
-            </p>
           </div>
         </div>
       </div>
